@@ -33,9 +33,12 @@
         transition: all 0.3s ease-in-out;
         &:focus {
           border: 2px #5dd55d solid;
+          &::placeholder {
+            color: rgb(242, 241, 241);
+          }
         }
         &::placeholder {
-          color: rgb(102, 98, 98);
+          color: rgb(169, 168, 168);
         }
         @include tablet_screens {
           min-width: 40%;
@@ -93,6 +96,81 @@
           font-size: 16px;
           @include desktop_screens {
             font-size: 18px;
+          }
+        }
+      }
+    }
+    .hr {
+      border: 0;
+      border-top: 1px solid #e5e5e5;
+    }
+  }
+  main.task_columns_container {
+    display: flex;
+    max-width: 90vw;
+    justify-content: space-around;
+    gap: 8px;
+
+    padding: 1rem 1rem;
+    .task_column {
+      h2 {
+        display: flex;
+        margin-bottom: 1rem;
+
+        .goal_icon {
+          color: #d9534f;
+          height: 18px;
+          @include tablet_screens {
+            height: 33px;
+            margin-right: 0.7rem;
+          }
+        }
+        .status_text {
+          font-size: 18px;
+          line-height: 18px;
+          @include tablet_screens {
+            font-size: 33px;
+            line-height: 33px;
+          }
+        }
+      }
+      .card {
+        border: 1px solid gray;
+        border-radius: 6px;
+        padding: 8px;
+        max-width: 30.3vw;
+
+        .title {
+          margin-bottom: 1rem;
+          max-width: 80%;
+          overflow-wrap: break-word;
+          @include tablet_screens {
+            font-size: 22px;
+          }
+        }
+        .bottom_container {
+          display: flex;
+          justify-content: space-between;
+          .buttons_container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+
+            max-width: 80%;
+            .tag_btn {
+              padding: 2px 6px;
+              border-radius: 3px;
+              border: 1px solid rgb(172, 170, 170);
+            }
+          }
+          .delete_icon {
+            align-self: self-end;
+
+            color: rgb(236, 143, 143);
+            cursor: pointer;
+            @include tablet_screens {
+              font-size: 26px;
+            }
           }
         }
       }
