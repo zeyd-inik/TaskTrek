@@ -1,0 +1,27 @@
+@import '../variables.scss';
+
+.task_column {
+  h2 {
+    display: flex;
+    margin-bottom: 1rem;
+    align-items: center;
+
+    .goal_icon {
+      color: #d9534f;
+      margin-right: 2px;
+      font-size: 26px;
+      @include tablet_screens {
+        height: 33px;
+        margin-right: 0.7rem;
+      }
+    }
+    .task_tag {
+      font-size: 18px;
+      line-height: 18px;
+      @include tablet_screens {
+        font-size: 33px;
+        line-height: 33px;
+      }
+    }
+  }
+}

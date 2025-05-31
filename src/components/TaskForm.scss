@@ -1,0 +1,81 @@
+@import '../variables.scss';
+
+.task_form {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  gap: 1rem;
+
+  .text_input {
+    display: block;
+    margin: 0 auto;
+    min-width: 80%;
+    padding: 5px 12px;
+    background-color: rgb(242, 241, 241);
+    font-size: 16px;
+    border: 2px rgb(206, 204, 204) solid;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    &:focus {
+      border: 2px #5dd55d solid;
+      &::placeholder {
+        color: rgb(242, 241, 241);
+      }
+    }
+    &::placeholder {
+      color: rgb(169, 168, 168);
+    }
+    @include tablet_screens {
+      min-width: 40%;
+    }
+    @include desktop_screens {
+      font-size: 22px;
+    }
+  }
+  .bottom_container {
+    display: flex;
+    justify-content: center;
+
+    gap: 12px;
+
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 1rem;
+    @include tablet_screens {
+      width: 40%;
+    }
+    .tags_container {
+      flex: 1;
+    }
+
+    .select {
+      padding: 8px 12px;
+      align-self: center;
+      border-radius: 3px;
+      font-size: 14px;
+      cursor: pointer;
+      @include desktop_screens {
+        font-size: 18px;
+      }
+    }
+    .submit-btn {
+      padding: 8px 12px;
+      align-self: center;
+      white-space: nowrap;
+      background-color: rgb(99, 86, 251);
+      color: white;
+      border: none;
+      border-radius: 3px;
+      font-size: 16px;
+      cursor: pointer;
+      @include desktop_screens {
+        font-size: 18px;
+      }
+    }
+  }
+  .hr {
+    border: 0;
+    border-top: 1px solid #e5e5e5;
+  }
+}
