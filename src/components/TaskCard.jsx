@@ -17,6 +17,7 @@ function TaskCard({ taskInput, selectedTags }) {
               <TaskTag
                 key={index}
                 tag={selectedTag}
+                selected
               />
             );
           })}

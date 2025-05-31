@@ -15,6 +15,13 @@ function App() {
   const [tasks, setTasks] = useState([]);
   const [selectedTags, setSelectedTags] = useState([]);
 
+  const checkTag = (tag) => {
+    const isSelected = selectedTags.some((selectedTag) => {
+      return selectedTag === tag;
+    });
+    return isSelected;
+  };
+
   const selectTag = (tag) => {
     const isSelected = selectedTags.some((selectedTag) => {
       return selectedTag === tag;
@@ -39,6 +46,7 @@ function App() {
           setSelectedTags={setSelectedTags}
           selectedTags={selectedTags}
           selectTag={selectTag}
+          checkTag={checkTag}
         />
       </header>
       <main className="task_columns_container">
@@ -47,12 +55,16 @@ function App() {
           status="To do"
           tasks={tasks}
           selectedTags={selectedTags}
+          selectTag={selectTag}
+          checkTag={checkTag}
         />
         <TaskColumn
           icon={<LuStar style={{ color: '#d6d60a' }} />}
           status="Doing"
           tasks={tasks}
           selectedTags={selectedTags}
+          selectTag={selectTag}
+          checkTag={checkTag}
         />
         <TaskColumn
           icon={<TiTickOutline style={{ color: 'green' }} />}
@@ -60,6 +72,7 @@ function App() {
           tasks={tasks}
           selectedTags={selectedTags}
           selectTag={selectTag}
+          checkTag={checkTag}
         />
       </main>
     </div>

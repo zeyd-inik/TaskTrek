@@ -5,7 +5,13 @@ import './TaskForm.scss';
 /* components */
 import TaskTag from './TaskTag';
 
-function TaskForm({ setTasks, setSelectedTags, selectedTags, selectTag }) {
+function TaskForm({
+  setTasks,
+  setSelectedTags,
+  selectedTags,
+  selectTag,
+  checkTag,
+}) {
   const [taskInput, setTaskInput] = useState('');
 
   const [taskStatus, setTaskStatus] = useState('To do');
@@ -28,7 +34,7 @@ function TaskForm({ setTasks, setSelectedTags, selectedTags, selectTag }) {
     });
     setTaskInput('');
     setSelectedTags([]);
-    setTaskStatus('');
+    setTaskStatus('To do');
   };
 
   return (
@@ -51,18 +57,22 @@ function TaskForm({ setTasks, setSelectedTags, selectedTags, selectTag }) {
           <TaskTag
             tag="HTML"
             selectTag={selectTag}
+            selected={checkTag('HTML')}
           />
           <TaskTag
             tag="CSS"
             selectTag={selectTag}
+            selected={checkTag('CSS')}
           />
           <TaskTag
             tag="JavaScript"
             selectTag={selectTag}
+            selected={checkTag('JavaScript')}
           />
           <TaskTag
             tag="React"
             selectTag={selectTag}
+            selected={checkTag('React')}
           />
         </div>
         <select
