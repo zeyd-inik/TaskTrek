@@ -1,7 +1,14 @@
 import TaskCard from './TaskCard';
 import './TaskColumn.scss';
 
-function TaskColumn({ icon, status, tasks, selectedTags, selectTag }) {
+function TaskColumn({
+  icon,
+  status,
+  tasks,
+  selectedTags,
+  selectTag,
+  deleteTask,
+}) {
   return (
     <section className="task_column">
       <h2>
@@ -18,6 +25,8 @@ function TaskColumn({ icon, status, tasks, selectedTags, selectTag }) {
               selectedTags={selectedTags}
               selectTag={selectTag}
               key={id}
+              deleteTask={deleteTask}
+              task={task}
             />
           );
         }

@@ -6,7 +6,7 @@ import { TbTrashX } from 'react-icons/tb';
 /* components */
 import TaskTag from './TaskTag';
 
-function TaskCard({ taskInput, selectedTags }) {
+function TaskCard({ taskInput, selectedTags, task, deleteTask }) {
   return (
     <div className="task_card">
       <div className="title">{taskInput}</div>
@@ -22,7 +22,12 @@ function TaskCard({ taskInput, selectedTags }) {
             );
           })}
         </div>
-        <span className="delete_icon">{<TbTrashX />}</span>
+        <span
+          onClick={() => deleteTask(task.id)}
+          className="delete_icon"
+        >
+          {<TbTrashX />}
+        </span>
       </div>
     </div>
   );

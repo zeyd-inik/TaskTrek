@@ -22,6 +22,13 @@ function App() {
     return isSelected;
   };
 
+  const deleteTask = (taskId) => {
+    const newTasks = tasks.filter((task) => {
+      return task.id !== taskId;
+    });
+    setTasks(newTasks);
+  };
+
   const selectTag = (tag) => {
     const isSelected = selectedTags.some((selectedTag) => {
       return selectedTag === tag;
@@ -57,6 +64,7 @@ function App() {
           selectedTags={selectedTags}
           selectTag={selectTag}
           checkTag={checkTag}
+          deleteTask={deleteTask}
         />
         <TaskColumn
           icon={<LuStar style={{ color: '#d6d60a' }} />}
@@ -65,6 +73,7 @@ function App() {
           selectedTags={selectedTags}
           selectTag={selectTag}
           checkTag={checkTag}
+          deleteTask={deleteTask}
         />
         <TaskColumn
           icon={<TiTickOutline style={{ color: 'green' }} />}
@@ -73,6 +82,7 @@ function App() {
           selectedTags={selectedTags}
           selectTag={selectTag}
           checkTag={checkTag}
+          deleteTask={deleteTask}
         />
       </main>
     </div>
