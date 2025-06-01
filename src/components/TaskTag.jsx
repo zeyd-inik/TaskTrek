@@ -2,10 +2,10 @@ import './TaskTag.scss';
 
 function TaskTag({ tag, selectTag, selected }) {
   const tagColor = {
-    HTML: { backgroundColor: '#e5b253' },
-    CSS: { backgroundColor: '#418b41' },
-    JavaScript: { backgroundColor: '#abab3b' },
-    React: { backgroundColor: '#7575ce' },
+    HTML: { backgroundColor: '#e5b253', color: 'white' },
+    CSS: { backgroundColor: '#418b41', color: 'white' },
+    JavaScript: { backgroundColor: '#abab3b', color: 'white' },
+    React: { backgroundColor: '#7575ce', color: 'white' },
   };
   return (
     <button
