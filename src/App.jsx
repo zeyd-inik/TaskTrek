@@ -19,7 +19,6 @@ function App() {
     const data = await JSON.parse(localStorage.getItem('tasks'));
     if (!data) {
       localStorage.setItem('tasks', JSON.stringify([]));
-      return;
     } else {
       setTasks(data);
     }
