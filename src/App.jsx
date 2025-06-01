@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import './App.scss';
 
@@ -14,6 +14,24 @@ import TaskColumn from './components/TaskColumn';
 function App() {
   const [tasks, setTasks] = useState([]);
   const [selectedTags, setSelectedTags] = useState([]);
+
+  const fetchData = async () => {
+    const data = await JSON.parse(localStorage.getItem('tasks'));
+    if (!data) {
+      localStorage.setItem('tasks', JSON.stringify([]));
+      return;
+    } else {
+      setTasks(data);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);
 
   const checkTag = (tag) => {
     const isSelected = selectedTags.some((selectedTag) => {
